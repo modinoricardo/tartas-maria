@@ -12,6 +12,7 @@ body {
 }
 
 /* Header */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -37,7 +38,7 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-.btn-pedido{
+.btn-pedido {
     background-color: #2c2c2c;
     color: #ffffff;
     border: none;
@@ -50,4 +51,48 @@ nav ul li a:hover {
 
 .btn-pedido:hover {
     transform: scale(1.1);
+}
+
+/* Main */
+
+/* Hero */
+
+#imagenes-hero {
+    display: flex;
+    overflow: hidden;
+    height: 400px;
+}
+
+#imagenes-hero img {
+    width: calc(100% / 6);
+    object-fit: cover;
+}
+
+#texto-hero {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-hero {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn-hero:hover {
+    transform: scale(1.1);
+}
+
+#btn-hero{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
