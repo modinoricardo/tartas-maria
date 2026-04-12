@@ -5,6 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tartas de María | Tartas personalizadas en Madrid</title>
+
+    <!-- enlace para fuentes https://fonts.google.com/?preview.script=Latn -->
+
+    <!-- Link externo de https://fonts.google.com/selection/embed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,10 +30,20 @@
             </ul>
         </nav>
 
-        <button>Hacer Pedido</button>
+        <a class="btn-pedido" href="#pedido">Hacer pedido</a>
     </header>
 
     <main>
+
+        <!-- Seccion de la portada -->
+        <section id="hero">
+            <h2>Tartas caseras que enamoran desde el primer bocado</h2>
+            <p>Cada tarta es única, elaborada con ingredientes de calidad y diseñada especialmente para tu momento
+                especial</p>
+            <a href="#galeria">Ver Catálogo</a>
+            <a href="#pedido">Hacer Pedido</a>
+        </section>
+
         <!-- Seccion sobre maria -->
         <section id="sobre-maria">
             <div class="sobre-maria">
@@ -99,15 +117,6 @@
             </div>
         </section>
 
-        <!-- Seccion de la portada -->
-        <section id="hero">
-            <h2>Tartas caseras que enamoran desde el primer bocado</h2>
-            <p>Cada tarta es única, elaborada con ingredientes de calidad y diseñada especialmente para tu momento
-                especial</p>
-            <a href="#galeria">Ver Catálogo</a>
-            <a href="#pedido">Hacer Pedido</a>
-        </section>
-
         <!-- Seccion del porque elegirnos -->
         <section id="por-que-elegirnos">
             <h2>¿Por Qué Elegir Nuestras Tartas?</h2>
@@ -147,6 +156,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Seccion de la galeria -->
         <!-- Faltaria hacer la redireccion/navegacion -->
         <section id="galeria">
@@ -202,7 +212,7 @@
                 <input type="text" placeholder="Tu nombre">
                 <input type="tel" placeholder="Telefono de contacto">
                 <input type="email" placeholder="Correo de contacto">
-                <textarea name="" placeholder="¿Me quieres explicar algo antes de qeu te contacte?"></textarea>
+                <textarea placeholder="¿Me quieres explicar algo antes de qeu te contacte?"></textarea>
                 <input type="file" multiple>
                 <button type="submit">Enviar</button>
             </form>
