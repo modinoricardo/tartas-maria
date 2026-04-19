@@ -249,7 +249,6 @@ textarea {
     resize: vertical;
 }
 
-
 label {
     text-align: left;
 }
@@ -275,3 +274,30 @@ form label {
     min-width: 0
 }
 
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    padding: 60px 40px 20px 40px;
+}
+
+#informacion-pie {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+footer a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+ooter > p {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
