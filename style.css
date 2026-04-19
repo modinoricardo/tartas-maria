@@ -7,7 +7,15 @@
 /* #Todo */
 body {
     font-family: "Archivo Black", sans-serif;
-    background-color: #fdf6f0;
+    /* fondo crema */
+    /* background-color: #fdf6f0; */
+
+    /* fondo rosado */
+    background: linear-gradient(to right, #f0c8d8 0%, #f8e0ec 20%, #fdf0f6 50%, #f8e0ec 80%, #f0c8d8 100%);
+
+    /* fondo morado */
+    /* background: linear-gradient(to right, #d4a0c8 0%, #e4b8d8 20%, #f4d0ec 50%, #e4b8d8 80%, #d4a0c8 100%); */
+
     color: #2c2c2c;
 }
 
@@ -268,7 +276,7 @@ form label {
     min-width: 0
 }
 
-.campos-nombre-telefono{
+.campos-nombre-telefono {
     display: flex;
     gap: 15px;
     min-width: 0
@@ -292,7 +300,18 @@ footer a {
     text-decoration: none;
 }
 
-ooter > p {
+footer h4 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+footer p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+footer>p {
     border-top: 1px solid #333;
     padding-top: 20px;
     text-align: center;
