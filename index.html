@@ -11,14 +11,15 @@
     <!-- Link externo de https://fonts.google.com/selection/embed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Las tartas de María</h1>
+        <!-- <h1>Las tartas de María</h1> -->
+         <img src="imagenes/logo/logo.png" alt="Tartas de María" width="75" height="75">
         <!-- <p>Tartas caseras totalmente personalizadas, hechas con amor para tus momentos especiales</p> -->
 
         <nav>
@@ -30,7 +31,7 @@
             </ul>
         </nav>
 
-        <a class="btn-pedido" href="#pedido">Hacer pedido</a>
+        <a class="btn" href="#pedido">Hacer pedido</a>
     </header>
 
     <main>
@@ -38,28 +39,33 @@
         <!-- Seccion de la portada -->
         <section id="hero">
             <div id="imagenes-hero">
-
-                <img src="imagenes/tarta-02.jpeg"
-                    alt="Tarta personalizada decorada con temática de Leonel Messi">
-                <img src="imagenes/tarta-04.jpeg"
-                    alt="Tarta de temática de Dragon Ball con Shenron, Goku y bolas de dragón decorativas">
-                <img src="imagenes/tarta-03.jpeg"
-                    alt="Tarta con mensaje 'Una tarta pequeña' escrito a mano sobre cobertura blanca">
-                <img src="imagenes/tarta-12.jpeg"
-                    alt="Tarta rosa decorada con lazo, corazones y corona dorada estilo princesa">
-                <img src="imagenes/tarta-13.jpeg"
-                    alt="Tarta blanca decorada con flores de colores y detalles primaverales">
-                <img src="imagenes/tarta-18.jpeg"
-                    alt="Tarta con mensaje 'Happy Birthday Laura' escrito en la parte superior sobre cobertura blanca">
-
+                <div class="hero-track">
+                    <img src="carrusel/tarta-02.jpeg" alt="Tarta con temática de Leonel Messi">
+                    <img src="carrusel/tarta-04.jpeg" alt="Tarta de Dragon Ball con Shenron y Goku">
+                    <img src="carrusel/tarta-06.jpeg" alt="Tarta de One Piece con Luffy y barco pirata">
+                    <img src="carrusel/tarta-07.jpeg" alt="Cupcakes de One Piece y Pokémon">
+                    <img src="carrusel/tarta-12.jpeg" alt="Tarta rosa estilo princesa con corona dorada">
+                    <img src="carrusel/tarta-13.jpeg" alt="Tarta blanca decorada con flores primaverales">
+                    <img src="carrusel/tarta-17.jpeg" alt="Tarta de Miércoles Addams estilo gótico">
+                    <img src="carrusel/tarta-20.jpeg" alt="Tarta de Cars con Rayo McQueen y Mate">
+                    <!-- Duplicados para loop infinito -->
+                    <img src="carrusel/tarta-02.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-04.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-06.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-07.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-12.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-13.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-17.jpeg" alt="" aria-hidden="true">
+                    <img src="carrusel/tarta-20.jpeg" alt="" aria-hidden="true">
+                </div>
             </div>
             <div id="texto-hero">
                 <h2>Tartas caseras que enamoran desde el primer bocado</h2>
                 <p>Cada tarta es única, elaborada con ingredientes de calidad y diseñada especialmente para tu momento
                     especial</p>
                 <div id="btn-hero">
-                    <a class="btn-hero" href="#galeria">Ver Catálogo</a>
-                    <a class="btn-hero" href="#pedido">Hacer Pedido</a>
+                    <a class="btn" href="#galeria">Ver Catálogo</a>
+                    <a class="btn" href="#pedido">Hacer Pedido</a>
                 </div>
             </div>
         </section>
@@ -225,7 +231,7 @@
         <section id="pedido">
             <h2>Haz tu Pedido</h2>
             <p>Completa el formulario y nos pondremos en contacto contigo lo antes posible</p>
-            <form action="">
+            <form action="" id="form-pedido">
                 <div class="campos-nombre-telefono">
                     <div class="campo-formulario">
                         <label for="nombre">Nombre completo</label>
@@ -234,12 +240,12 @@
 
                     <div class="campo-formulario">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="+34 123 456 789">
+                        <input type="tel" id="telefono" placeholder="+34 123 456 789" required>
                     </div>
                 </div>
                 <div class="campo-formulario">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" placeholder="tu@email.com">
+                    <input type="email" id="correo" placeholder="tu@email.com" required>
                 </div>
 
                 <div class="campo-formulario">
@@ -249,12 +255,12 @@
                 </div>
 
                 <div class="campo-formulario">
-                    <label for="archivo"></label>
-                    <input type="file" id="archivo" multiple>
+                    <label for="archivo">Imágenes de referencia <span class="label-opcional">(opcional)</span></label>
+                    <input type="file" id="archivo" accept="image/*" multiple>
                 </div>
 
                 <div class="campo-formulario campo-checkbox">
-                    <input type="checkbox" required>
+                    <input type="checkbox" required id="checkbox">
                     <label>He leído y acepto la <a href="aviso-legal.html">Política de Privacidad</a></label>
                 </div>
 
