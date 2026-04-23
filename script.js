@@ -98,42 +98,231 @@ window.addEventListener("resize", sincronizarGaleriaConViewport);
 // Validación del formulario
 
 const formulario = document.getElementById("form-pedido");
+
+if (formulario) {
+
 const nombre = document.getElementById("nombre");
 const telefono = document.getElementById("telefono");
 const correo = document.getElementById("correo");
 const checkbox = document.getElementById("checkbox");
 
+const REGEX_TELEFONO = /^(\+34\s?)?[6789]\d{8}$/;
+const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function mostrarError(campo, mensaje) {
+    const contenedor = campo.closest(".campo-formulario");
+    contenedor.classList.add("tiene-error");
+    campo.setAttribute("aria-invalid", "true");
+
+    let errorEl = contenedor.querySelector(".mensaje-error");
+    if (!errorEl) {
+        errorEl = document.createElement("span");
+        errorEl.className = "mensaje-error";
+        errorEl.setAttribute("role", "alert");
+        contenedor.appendChild(errorEl);
+    }
+    errorEl.textContent = mensaje;
+}
+
+function limpiarError(campo) {
+    const contenedor = campo.closest(".campo-formulario");
+    contenedor.classList.remove("tiene-error");
+    campo.removeAttribute("aria-invalid");
+    const errorEl = contenedor.querySelector(".mensaje-error");
+    if (errorEl) errorEl.remove();
+}
+
+function validarNombre() {
+    if (!nombre.value.trim()) {
+        mostrarError(nombre, "Introduce tu nombre");
+        return false;
+    }
+    limpiarError(nombre);
+    return true;
+}
+
+function validarContacto() {
+    const telValor = telefono.value.trim();
+    const mailValor = correo.value.trim();
+
+    // Si ambos están vacíos, marcamos los dos: hace falta al menos uno
+    if (!telValor && !mailValor) {
+        mostrarError(telefono, "Introduce un teléfono o un correo");
+        mostrarError(correo, "Introduce un teléfono o un correo");
+        return false;
+    }
+
+    let esValido = true;
+
+    // Teléfono: si tiene valor, debe ser válido; si está vacío, se permite
+    if (telValor) {
+        if (!REGEX_TELEFONO.test(telValor)) {
+            mostrarError(telefono, "Formato no válido (ej: 612345678 o +34 612345678)");
+            esValido = false;
+        } else {
+            limpiarError(telefono);
+        }
+    } else {
+        limpiarError(telefono);
+    }
+
+    // Correo: si tiene valor, debe ser válido; si está vacío, se permite
+    if (mailValor) {
+        if (!REGEX_CORREO.test(mailValor)) {
+            mostrarError(correo, "Correo electrónico no válido");
+            esValido = false;
+        } else {
+            limpiarError(correo);
+        }
+    } else {
+        limpiarError(correo);
+    }
+
+    return esValido;
+}
+
+function validarCheckbox() {
+    if (!checkbox.checked) {
+        mostrarError(checkbox, "Debes aceptar la política de privacidad");
+        return false;
+    }
+    limpiarError(checkbox);
+    return true;
+}
+
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let bNombreValido = true;
-    if (!nombre.value.trim()) {
-        alert("El nombre no puede estar vacío");
-        bNombreValido = false;
-    }
+    const resultados = [
+        validarNombre(),
+        validarContacto(),
+        validarCheckbox(),
+    ];
 
-    let bTelefonoValido = true;
-    const regexTel = /^(\+34\s?)?[6789]\d{8}$/;
-    if (!telefono.value.trim() || !regexTel.test(telefono.value.trim())) {
-        alert("Teléfono no válido (formato: 612345678 o +34 612345678)");
-        bTelefonoValido = false;
-    }
-
-    let bCorreoValido = true;
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!correo.value.trim() || !regexEmail.test(correo.value.trim())) {
-        alert("Correo electrónico no válido");
-        bCorreoValido = false;
-    }
-
-    let bCheckboxValido = checkbox.checked;
-    if (!bCheckboxValido) {
-        alert("Debes aceptar la política de privacidad");
-    }
-
-    if (!bNombreValido || !bTelefonoValido || !bCorreoValido || !bCheckboxValido) {
+    const esValido = resultados.every(Boolean);
+    if (!esValido) {
+        const primerError = formulario.querySelector(".campo-formulario.tiene-error");
+        if (primerError) primerError.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
     }
 
     console.log("Formulario válido — listo para enviar");
 });
+
+// Limpiar el error de un campo en cuanto el usuario lo corrige
+nombre.addEventListener("input", () => {
+    if (nombre.value.trim()) limpiarError(nombre);
+});
+
+function limpiarErroresContactoSiProcede() {
+    const telValor = telefono.value.trim();
+    const mailValor = correo.value.trim();
+
+    // Teléfono: limpia si tiene formato válido o si está vacío pero hay correo
+    if ((telValor && REGEX_TELEFONO.test(telValor)) || (!telValor && mailValor)) {
+        limpiarError(telefono);
+    }
+
+    // Correo: limpia si tiene formato válido o si está vacío pero hay teléfono
+    if ((mailValor && REGEX_CORREO.test(mailValor)) || (!mailValor && telValor)) {
+        limpiarError(correo);
+    }
+}
+
+telefono.addEventListener("input", limpiarErroresContactoSiProcede);
+correo.addEventListener("input", limpiarErroresContactoSiProcede);
+
+checkbox.addEventListener("change", () => {
+    if (checkbox.checked) limpiarError(checkbox);
+});
+
+} // fin if (formulario)
+
+
+// Diálogo visor de imágenes (galeria.html)
+
+const lightbox = document.getElementById("lightbox");
+
+if (lightbox && typeof lightbox.showModal === "function") {
+    const lightboxImg = lightbox.querySelector(".lightbox-img");
+    const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+    const btnClose = lightbox.querySelector(".lightbox-close");
+    const btnPrev = lightbox.querySelector(".lightbox-prev");
+    const btnNext = lightbox.querySelector(".lightbox-next");
+
+    const figura = lightbox.querySelector(".lightbox-figura");
+    const items = Array.from(document.querySelectorAll(".grid-catalogo-item img"));
+    const DURACION_CAMBIO = 220; // debe coincidir con la transición CSS
+    let indiceActual = 0;
+    let animando = false;
+
+    function actualizarImagen() {
+        const img = items[indiceActual];
+        // Usar siempre la variante a máxima resolución (sin sufijo -800w/-400w)
+        const fullSrc = img.src.replace(/-(?:400|800)w\.(jpeg|jpg|webp)$/i, '.$1');
+        lightboxImg.src = fullSrc;
+        lightboxImg.alt = img.alt;
+        lightboxCaption.textContent = img.alt;
+    }
+
+    function abrirLightbox(i) {
+        indiceActual = i;
+        actualizarImagen();
+        lightbox.showModal();
+    }
+
+    function cerrarLightbox() {
+        lightbox.close();
+    }
+
+    function cambiarA(nuevoIndice) {
+        if (animando || nuevoIndice === indiceActual) return;
+        animando = true;
+        figura.classList.add("cambiando");
+
+        setTimeout(() => {
+            indiceActual = nuevoIndice;
+            actualizarImagen();
+            // Doble RAF: aseguramos que el nuevo estado se pinte antes de quitar la clase
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    figura.classList.remove("cambiando");
+                    animando = false;
+                });
+            });
+        }, DURACION_CAMBIO);
+    }
+
+    function anterior() {
+        cambiarA((indiceActual - 1 + items.length) % items.length);
+    }
+
+    function siguiente() {
+        cambiarA((indiceActual + 1) % items.length);
+    }
+
+    items.forEach((img, i) => {
+        const tarjeta = img.closest(".grid-catalogo-item");
+        (tarjeta || img.parentElement).addEventListener("click", () => abrirLightbox(i));
+    });
+
+    btnClose.addEventListener("click", cerrarLightbox);
+    btnPrev.addEventListener("click", anterior);
+    btnNext.addEventListener("click", siguiente);
+
+    // Click en el backdrop (fuera del contenido) cierra el diálogo
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) cerrarLightbox();
+    });
+
+    // Flechas izq/der para navegar (ESC ya lo gestiona el <dialog> de forma nativa)
+    lightbox.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            anterior();
+        } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            siguiente();
+        }
+    });
+}

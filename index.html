@@ -6,28 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tartas de María | Tartas personalizadas en Madrid</title>
 
-    <!-- enlace para fuentes https://fonts.google.com/?preview.script=Latn -->
+    <!-- SEO básico -->
+    <meta name="description" content="Tartas caseras personalizadas en Madrid para cumpleaños, bodas, comuniones y eventos. Diseños únicos hechos a mano por María con ingredientes de calidad.">
+    <meta name="keywords" content="tartas personalizadas Madrid, tartas caseras, repostería artesanal, tartas cumpleaños, tartas boda, fondant, tartas de diseño">
+    <meta name="rich.icodes" content="Tartas de María">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tartasdemaria.com/">
 
-    <!-- Link externo de https://fonts.google.com/selection/embed -->
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="Tartas de María">
+    <meta property="og:title" content="Tartas de María | Tartas personalizadas en Madrid">
+    <meta property="og:description" content="Tartas caseras personalizadas en Madrid para cumpleaños, bodas y eventos especiales. Diseños únicos hechos a mano.">
+    <meta property="og:url" content="https://tartasdemaria.com/">
+    <meta property="og:image" content="https://tartasdemaria.com/imagenes/tarta-12.jpeg">
+    <meta property="og:image:alt" content="Tarta personalizada rosa con lazo y corona dorada estilo princesa">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tartas de María | Tartas personalizadas en Madrid">
+    <meta name="twitter:description" content="Tartas caseras personalizadas en Madrid para cumpleaños, bodas y eventos especiales.">
+    <meta name="twitter:image" content="https://tartasdemaria.com/imagenes/tarta-12.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagenes/logo/logo.png">
+
+    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Datos estructurados: negocio local (ayuda a aparecer en Google Maps y ficha de búsqueda) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Tartas de María",
+      "description": "Repostería artesanal especializada en tartas personalizadas para todo tipo de eventos.",
+      "image": "https://tartasdemaria.com/imagenes/tarta-12.jpeg",
+      "url": "https://tartasdemaria.com/",
+      "telephone": "",
+      "email": "",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "sameAs": []
+    }
+    </script>
 </head>
 
 <body>
     <header>
         <!-- <h1>Las tartas de María</h1> -->
-         <img src="imagenes/logo/logo.png" alt="Tartas de María" width="75" height="75">
+         <img src="imagenes/logo/logo_v1.png" alt="Tartas de María" width="100" height="100">
         <!-- <p>Tartas caseras totalmente personalizadas, hechas con amor para tus momentos especiales</p> -->
 
         <nav>
             <ul>
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#sobre-maria">Sobre María</a></li>
-                <li><a href="#por-que-elegirnos">Por qué elegirnos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
+                <!-- <li><a href="#por-que-elegirnos">Por qué elegirnos</a></li> -->
+                <li><a href="#galeria">Galería</a></li>
             </ul>
         </nav>
 
@@ -40,31 +93,79 @@
         <section id="hero">
             <div id="imagenes-hero">
                 <div class="hero-track">
-                    <img src="carrusel/tarta-02.jpeg" alt="Tarta con temática de Leonel Messi">
-                    <img src="carrusel/tarta-04.jpeg" alt="Tarta de Dragon Ball con Shenron y Goku">
-                    <img src="carrusel/tarta-06.jpeg" alt="Tarta de One Piece con Luffy y barco pirata">
-                    <img src="carrusel/tarta-07.jpeg" alt="Cupcakes de One Piece y Pokémon">
-                    <img src="carrusel/tarta-12.jpeg" alt="Tarta rosa estilo princesa con corona dorada">
-                    <img src="carrusel/tarta-13.jpeg" alt="Tarta blanca decorada con flores primaverales">
-                    <img src="carrusel/tarta-17.jpeg" alt="Tarta de Miércoles Addams estilo gótico">
-                    <img src="carrusel/tarta-20.jpeg" alt="Tarta de Cars con Rayo McQueen y Mate">
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-02-400w.webp 400w, imagenes/tarta-02-800w.webp 800w, imagenes/tarta-02.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-02-800w.jpeg" srcset="imagenes/tarta-02-400w.jpeg 400w, imagenes/tarta-02-800w.jpeg 800w, imagenes/tarta-02.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta con temática de Leonel Messi">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-04-400w.webp 400w, imagenes/tarta-04-800w.webp 800w, imagenes/tarta-04.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-04-800w.jpeg" srcset="imagenes/tarta-04-400w.jpeg 400w, imagenes/tarta-04-800w.jpeg 800w, imagenes/tarta-04.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta de Dragon Ball con Shenron y Goku">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-06-400w.webp 400w, imagenes/tarta-06-800w.webp 800w, imagenes/tarta-06.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-06-800w.jpeg" srcset="imagenes/tarta-06-400w.jpeg 400w, imagenes/tarta-06-800w.jpeg 800w, imagenes/tarta-06.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta de One Piece con Luffy y barco pirata">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-07-400w.webp 400w, imagenes/tarta-07-800w.webp 800w, imagenes/tarta-07.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-07-800w.jpeg" srcset="imagenes/tarta-07-400w.jpeg 400w, imagenes/tarta-07-800w.jpeg 800w, imagenes/tarta-07.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Cupcakes de One Piece y Pokémon">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-12-400w.webp 400w, imagenes/tarta-12-800w.webp 800w, imagenes/tarta-12.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-12-800w.jpeg" srcset="imagenes/tarta-12-400w.jpeg 400w, imagenes/tarta-12-800w.jpeg 800w, imagenes/tarta-12.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta rosa estilo princesa con corona dorada">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-13-400w.webp 400w, imagenes/tarta-13-800w.webp 800w, imagenes/tarta-13.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-13-800w.jpeg" srcset="imagenes/tarta-13-400w.jpeg 400w, imagenes/tarta-13-800w.jpeg 800w, imagenes/tarta-13.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta blanca decorada con flores primaverales">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-17-400w.webp 400w, imagenes/tarta-17-800w.webp 800w, imagenes/tarta-17.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-17-800w.jpeg" srcset="imagenes/tarta-17-400w.jpeg 400w, imagenes/tarta-17-800w.jpeg 800w, imagenes/tarta-17.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta de Miércoles Addams estilo gótico">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-20-400w.webp 400w, imagenes/tarta-20-800w.webp 800w, imagenes/tarta-20.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-20-800w.jpeg" srcset="imagenes/tarta-20-400w.jpeg 400w, imagenes/tarta-20-800w.jpeg 800w, imagenes/tarta-20.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="Tarta de Cars con Rayo McQueen y Mate">
+                    </picture>
                     <!-- Duplicados para loop infinito -->
-                    <img src="carrusel/tarta-02.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-04.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-06.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-07.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-12.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-13.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-17.jpeg" alt="" aria-hidden="true">
-                    <img src="carrusel/tarta-20.jpeg" alt="" aria-hidden="true">
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-02-400w.webp 400w, imagenes/tarta-02-800w.webp 800w, imagenes/tarta-02.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-02-800w.jpeg" srcset="imagenes/tarta-02-400w.jpeg 400w, imagenes/tarta-02-800w.jpeg 800w, imagenes/tarta-02.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-04-400w.webp 400w, imagenes/tarta-04-800w.webp 800w, imagenes/tarta-04.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-04-800w.jpeg" srcset="imagenes/tarta-04-400w.jpeg 400w, imagenes/tarta-04-800w.jpeg 800w, imagenes/tarta-04.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-06-400w.webp 400w, imagenes/tarta-06-800w.webp 800w, imagenes/tarta-06.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-06-800w.jpeg" srcset="imagenes/tarta-06-400w.jpeg 400w, imagenes/tarta-06-800w.jpeg 800w, imagenes/tarta-06.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-07-400w.webp 400w, imagenes/tarta-07-800w.webp 800w, imagenes/tarta-07.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-07-800w.jpeg" srcset="imagenes/tarta-07-400w.jpeg 400w, imagenes/tarta-07-800w.jpeg 800w, imagenes/tarta-07.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-12-400w.webp 400w, imagenes/tarta-12-800w.webp 800w, imagenes/tarta-12.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-12-800w.jpeg" srcset="imagenes/tarta-12-400w.jpeg 400w, imagenes/tarta-12-800w.jpeg 800w, imagenes/tarta-12.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-13-400w.webp 400w, imagenes/tarta-13-800w.webp 800w, imagenes/tarta-13.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-13-800w.jpeg" srcset="imagenes/tarta-13-400w.jpeg 400w, imagenes/tarta-13-800w.jpeg 800w, imagenes/tarta-13.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-17-400w.webp 400w, imagenes/tarta-17-800w.webp 800w, imagenes/tarta-17.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-17-800w.jpeg" srcset="imagenes/tarta-17-400w.jpeg 400w, imagenes/tarta-17-800w.jpeg 800w, imagenes/tarta-17.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-20-400w.webp 400w, imagenes/tarta-20-800w.webp 800w, imagenes/tarta-20.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-20-800w.jpeg" srcset="imagenes/tarta-20-400w.jpeg 400w, imagenes/tarta-20-800w.jpeg 800w, imagenes/tarta-20.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px" alt="" aria-hidden="true">
+                    </picture>
                 </div>
             </div>
             <div id="texto-hero">
-                <h2>Tartas caseras que enamoran desde el primer bocado</h2>
+                <h1>Dulces bocados personalizados</h1>
                 <p>Cada tarta es única, elaborada con ingredientes de calidad y diseñada especialmente para tu momento
                     especial</p>
                 <div id="btn-hero">
-                    <a class="btn" href="#galeria">Ver Catálogo</a>
+                    <a class="btn" href="#galeria">Nuestras creaciones</a>
                     <a class="btn" href="#pedido">Hacer Pedido</a>
                 </div>
             </div>
@@ -163,66 +264,141 @@
                 <div id="imagenes-galeria">
                     <div id="personajes-galeria" class="categoria-galeria">
                         <h3>Tartas ambientadas en personajes</h3>
-                        <img src="imagenes/tarta-20.jpeg"
+                        <picture>
+                            <source type="image/webp" srcset="imagenes/tarta-20-400w.webp 400w, imagenes/tarta-20-800w.webp 800w, imagenes/tarta-20.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                            <img src="imagenes/tarta-20-800w.jpeg" srcset="imagenes/tarta-20-400w.jpeg 400w, imagenes/tarta-20-800w.jpeg 800w, imagenes/tarta-20.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                             alt="Tarta de crema roja con temática de Cars, decorada con Rayo McQueen, Mate, señal Route 66 y nombre Sergio con número 6">
+                        </picture>
                     </div>
                     <div id="basicas-galeria" class="categoria-galeria">
                         <h3>Tartas elegantes y clásicas para cualquier ocasión</h3>
-                        <img src="imagenes/tarta-15.jpeg"
+                        <picture>
+                            <source type="image/webp" srcset="imagenes/tarta-15-400w.webp 400w, imagenes/tarta-15-800w.webp 800w, imagenes/tarta-15.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                            <img src="imagenes/tarta-15-800w.jpeg" srcset="imagenes/tarta-15-400w.jpeg 400w, imagenes/tarta-15-800w.jpeg 800w, imagenes/tarta-15.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                             alt="Tarta de crema con decoración de rosetas, virutas de chocolate y topper 'Feliz cumpleaños' con velas">
+                        </picture>
                     </div>
                     <div id="escenarios-galeria" class="categoria-galeria">
                         <h3>Tartas inspiradas en paisajes y ambientes únicos</h3>
-                        <img src="imagenes/tarta-14.jpeg"
+                        <picture>
+                            <source type="image/webp" srcset="imagenes/tarta-14-400w.webp 400w, imagenes/tarta-14-800w.webp 800w, imagenes/tarta-14.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                            <img src="imagenes/tarta-14-800w.jpeg" srcset="imagenes/tarta-14-400w.jpeg 400w, imagenes/tarta-14-800w.jpeg 800w, imagenes/tarta-14.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                             alt="Tarta con degradado azul estilo marino, decorada con conchas, estrellas de mar y detalles de perlas">
+                        </picture>
                     </div>
                     <div id="romanticas-galeria" class="categoria-galeria">
                         <h3>Tartas llenas de amor para momentos especiales</h3>
-                        <img src="imagenes/tarta-09.jpeg"
+                        <picture>
+                            <source type="image/webp" srcset="imagenes/tarta-09-400w.webp 400w, imagenes/tarta-09-800w.webp 800w, imagenes/tarta-09.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                            <img src="imagenes/tarta-09-800w.jpeg" srcset="imagenes/tarta-09-400w.jpeg 400w, imagenes/tarta-09-800w.jpeg 800w, imagenes/tarta-09.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                             alt="Ramas de árbol con hojas verdes en primer plano y jardín con flores al fondo">
+                        </picture>
                     </div>
                 </div>
+                <div class="ver-todo-catalogo">
+                    <a class="btn" href="galeria.html">Ver todo el catálogo</a>
+                </div>
                 <!-- <div>
-                    <img src="imagenes/tarta-01.jpeg"
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-01-400w.webp 400w, imagenes/tarta-01-800w.webp 800w, imagenes/tarta-01.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-01-800w.jpeg" srcset="imagenes/tarta-01-400w.jpeg 400w, imagenes/tarta-01-800w.jpeg 800w, imagenes/tarta-01.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta personalizada de fondant decorada con temática de Miss mundo Lugo">
-                    <img src="imagenes/tarta-02.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-02-400w.webp 400w, imagenes/tarta-02-800w.webp 800w, imagenes/tarta-02.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-02-800w.jpeg" srcset="imagenes/tarta-02-400w.jpeg 400w, imagenes/tarta-02-800w.jpeg 800w, imagenes/tarta-02.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta personalizada de fondant decorada con temática de Leonel Messi">
-                    <img src="imagenes/tarta-03.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-03-400w.webp 400w, imagenes/tarta-03-800w.webp 800w, imagenes/tarta-03.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-03-800w.jpeg" srcset="imagenes/tarta-03-400w.jpeg 400w, imagenes/tarta-03-800w.jpeg 800w, imagenes/tarta-03.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant con mensaje 'Una tarta pequeña' escrito a mano sobre cobertura blanca">
-                    <img src="imagenes/tarta-04.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-04-400w.webp 400w, imagenes/tarta-04-800w.webp 800w, imagenes/tarta-04.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-04-800w.jpeg" srcset="imagenes/tarta-04-400w.jpeg 400w, imagenes/tarta-04-800w.jpeg 800w, imagenes/tarta-04.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant temática de Dragon Ball con Shenron, Goku y bolas de dragón decorativas">
-                    <img src="imagenes/tarta-05.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-05-400w.webp 400w, imagenes/tarta-05-800w.webp 800w, imagenes/tarta-05.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-05-800w.jpeg" srcset="imagenes/tarta-05-400w.jpeg 400w, imagenes/tarta-05-800w.jpeg 800w, imagenes/tarta-05.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant con temática romántica de pareja besándose, decoración minimalista sobre fondo blanco">
-                    <img src="imagenes/tarta-06.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-06-400w.webp 400w, imagenes/tarta-06-800w.webp 800w, imagenes/tarta-06.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-06-800w.jpeg" srcset="imagenes/tarta-06-400w.jpeg 400w, imagenes/tarta-06-800w.jpeg 800w, imagenes/tarta-06.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta personalizada de fondant con temática de One Piece, decorada con Luffy, barco pirata y símbolos de la serie, acompañada de cupcakes temáticos">
-                    <img src="imagenes/tarta-07.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-07-400w.webp 400w, imagenes/tarta-07-800w.webp 800w, imagenes/tarta-07.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-07-800w.jpeg" srcset="imagenes/tarta-07-400w.jpeg 400w, imagenes/tarta-07-800w.jpeg 800w, imagenes/tarta-07.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Cupcakes decorados con temática de One Piece y Pokémon, con detalles de Luffy, Pikachu, Poké Ball y fruta del diablo">
-                    <img src="imagenes/tarta-08.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-08-400w.webp 400w, imagenes/tarta-08-800w.webp 800w, imagenes/tarta-08.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-08-800w.jpeg" srcset="imagenes/tarta-08-400w.jpeg 400w, imagenes/tarta-08-800w.jpeg 800w, imagenes/tarta-08.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de cumpleaños con cobertura blanca y efecto degradado azul, topper 'Happy Birthday' y número 24 dorado">
-                    <img src="imagenes/tarta-09.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-09-400w.webp 400w, imagenes/tarta-09-800w.webp 800w, imagenes/tarta-09.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-09-800w.jpeg" srcset="imagenes/tarta-09-400w.jpeg 400w, imagenes/tarta-09-800w.jpeg 800w, imagenes/tarta-09.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Ramas de árbol con hojas verdes en primer plano y jardín con flores al fondo">
-                    <img src="imagenes/tarta-10.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-10-400w.webp 400w, imagenes/tarta-10-800w.webp 800w, imagenes/tarta-10.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-10-800w.jpeg" srcset="imagenes/tarta-10-400w.jpeg 400w, imagenes/tarta-10-800w.jpeg 800w, imagenes/tarta-10.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant con temática infantil de cielo con nubes, topper de bebé y nombre Meruem">
-                    <img src="imagenes/tarta-11.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-11-400w.webp 400w, imagenes/tarta-11-800w.webp 800w, imagenes/tarta-11.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-11-800w.jpeg" srcset="imagenes/tarta-11-400w.jpeg 400w, imagenes/tarta-11-800w.jpeg 800w, imagenes/tarta-11.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant blanca decorada con pequeños corazones rojos y mensaje 'Happy Birthday' en la parte superior">
-                    <img src="imagenes/tarta-12.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-12-400w.webp 400w, imagenes/tarta-12-800w.webp 800w, imagenes/tarta-12.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-12-800w.jpeg" srcset="imagenes/tarta-12-400w.jpeg 400w, imagenes/tarta-12-800w.jpeg 800w, imagenes/tarta-12.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant rosa decorada con lazo, corazones y corona dorada estilo princesa">
-                    <img src="imagenes/tarta-13.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-13-400w.webp 400w, imagenes/tarta-13-800w.webp 800w, imagenes/tarta-13.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-13-800w.jpeg" srcset="imagenes/tarta-13-400w.jpeg 400w, imagenes/tarta-13-800w.jpeg 800w, imagenes/tarta-13.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant blanca decorada con flores de colores y detalles primaverales">
-                    <img src="imagenes/tarta-14.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-14-400w.webp 400w, imagenes/tarta-14-800w.webp 800w, imagenes/tarta-14.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-14-800w.jpeg" srcset="imagenes/tarta-14-400w.jpeg 400w, imagenes/tarta-14-800w.jpeg 800w, imagenes/tarta-14.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant con degradado azul estilo marino, decorada con conchas, estrellas de mar y detalles de perlas">
-                    <img src="imagenes/tarta-15.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-15-400w.webp 400w, imagenes/tarta-15-800w.webp 800w, imagenes/tarta-15.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-15-800w.jpeg" srcset="imagenes/tarta-15-400w.jpeg 400w, imagenes/tarta-15-800w.jpeg 800w, imagenes/tarta-15.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de crema con decoración de rosetas, virutas de chocolate y topper 'Feliz cumpleaños' con velas">
-                    <img src="imagenes/tarta-16.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-16-400w.webp 400w, imagenes/tarta-16-800w.webp 800w, imagenes/tarta-16.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-16-800w.jpeg" srcset="imagenes/tarta-16-400w.jpeg 400w, imagenes/tarta-16-800w.jpeg 800w, imagenes/tarta-16.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de crema rosa con mensaje 'Happy Birthday Mario' escrito en la parte superior">
-                    <img src="imagenes/tarta-17.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-17-400w.webp 400w, imagenes/tarta-17-800w.webp 800w, imagenes/tarta-17.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-17-800w.jpeg" srcset="imagenes/tarta-17-400w.jpeg 400w, imagenes/tarta-17-800w.jpeg 800w, imagenes/tarta-17.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta personalizada de Miércoles Addams en fondant con vestido negro y estilo gótico">
-                    <img src="imagenes/tarta-18.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-18-400w.webp 400w, imagenes/tarta-18-800w.webp 800w, imagenes/tarta-18.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-18-800w.jpeg" srcset="imagenes/tarta-18-400w.jpeg 400w, imagenes/tarta-18-800w.jpeg 800w, imagenes/tarta-18.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de fondant con mensaje 'Happy Birthday Laura' escrito en la parte superior sobre cobertura blanca">
-                    <img src="imagenes/tarta-19.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-19-400w.webp 400w, imagenes/tarta-19-800w.webp 800w, imagenes/tarta-19.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-19-800w.jpeg" srcset="imagenes/tarta-19-400w.jpeg 400w, imagenes/tarta-19-800w.jpeg 800w, imagenes/tarta-19.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de crema rosa decorada con bailarinas de ballet, perlas de azúcar y nombre Roma en la parte frontal">
-                    <img src="imagenes/tarta-20.jpeg"
+                    </picture>
+                    <picture>
+                        <source type="image/webp" srcset="imagenes/tarta-20-400w.webp 400w, imagenes/tarta-20-800w.webp 800w, imagenes/tarta-20.webp 1200w" sizes="(max-width: 768px) 90vw, 400px">
+                        <img src="imagenes/tarta-20-800w.jpeg" srcset="imagenes/tarta-20-400w.jpeg 400w, imagenes/tarta-20-800w.jpeg 800w, imagenes/tarta-20.jpeg 1200w" sizes="(max-width: 768px) 90vw, 400px"
                         alt="Tarta de crema roja con temática de Cars, decorada con Rayo McQueen, Mate, señal Route 66 y nombre Sergio con número 6">
+                    </picture>
                 </div> -->
             </div>
         </section>
@@ -240,12 +416,13 @@
 
                     <div class="campo-formulario">
                         <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" placeholder="+34 123 456 789" required>
+                        <input type="tel" id="telefono" placeholder="+34 123 456 789">
                     </div>
                 </div>
+                <p class="aviso-contacto">Déjanos <strong>al menos un teléfono o un correo</strong> para poder contactar contigo.</p>
                 <div class="campo-formulario">
                     <label for="correo">Correo electrónico</label>
-                    <input type="email" id="correo" placeholder="tu@email.com" required>
+                    <input type="email" id="correo" placeholder="tu@email.com">
                 </div>
 
                 <div class="campo-formulario">
@@ -286,8 +463,8 @@
                 <h4>Información</h4>
                 <p><a href="#hero">Inicio</a></p>
                 <p><a href="#sobre-maria">Sobre María</a></p>
-                <p><a href="#por-que-elegirnos">Por qué elegirnos</a></p>
-                <p><a href="#galeria">Galeria</a></p>
+                <!-- <p><a href="#por-que-elegirnos">Por qué elegirnos</a></p> -->
+                <p><a href="galeria.html">Galería</a></p>
             </div>
             <div class="resumen">
                 <h4>Contacto</h4>
