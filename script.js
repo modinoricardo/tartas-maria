@@ -104,7 +104,8 @@ if (formulario) {
 const nombre = document.getElementById("nombre");
 const telefono = document.getElementById("telefono");
 const correo = document.getElementById("correo");
-const checkbox = document.getElementById("checkbox");
+// Checkbox de política de privacidad desactivado temporalmente (pendiente aviso legal definitivo)
+// const checkbox = document.getElementById("checkbox");
 
 const REGEX_TELEFONO = /^(\+34\s?)?[6789]\d{8}$/;
 const REGEX_CORREO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -181,14 +182,15 @@ function validarContacto() {
     return esValido;
 }
 
-function validarCheckbox() {
-    if (!checkbox.checked) {
-        mostrarError(checkbox, "Debes aceptar la política de privacidad");
-        return false;
-    }
-    limpiarError(checkbox);
-    return true;
-}
+// Validación del checkbox desactivada temporalmente (pendiente aviso legal definitivo)
+// function validarCheckbox() {
+//     if (!checkbox.checked) {
+//         mostrarError(checkbox, "Debes aceptar la política de privacidad");
+//         return false;
+//     }
+//     limpiarError(checkbox);
+//     return true;
+// }
 
 formulario.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -196,7 +198,6 @@ formulario.addEventListener("submit", function (e) {
     const resultados = [
         validarNombre(),
         validarContacto(),
-        validarCheckbox(),
     ];
 
     const esValido = resultados.every(Boolean);
@@ -206,7 +207,31 @@ formulario.addEventListener("submit", function (e) {
         return;
     }
 
-    console.log("Formulario válido — listo para enviar");
+    const boton = formulario.querySelector("button[type='submit']");
+    boton.disabled = true;
+    boton.textContent = "Enviando...";
+
+    const mensaje = document.getElementById("texto-largo");
+
+    emailjs.send("service_knp3qxw", "template_a06evy8", {
+        nombre: nombre.value.trim(),
+        telefono: telefono.value.trim() || "No indicado",
+        correo: correo.value.trim() || "No indicado",
+        mensaje: mensaje.value.trim() || "Sin mensaje",
+    })
+    .then(() => {
+        boton.textContent = "¡Enviado!";
+        formulario.reset();
+        setTimeout(() => {
+            boton.disabled = false;
+            boton.textContent = "Enviar";
+        }, 4000);
+    })
+    .catch(() => {
+        boton.disabled = false;
+        boton.textContent = "Enviar";
+        alert("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.");
+    });
 });
 
 // Limpiar el error de un campo en cuanto el usuario lo corrige
@@ -232,9 +257,10 @@ function limpiarErroresContactoSiProcede() {
 telefono.addEventListener("input", limpiarErroresContactoSiProcede);
 correo.addEventListener("input", limpiarErroresContactoSiProcede);
 
-checkbox.addEventListener("change", () => {
-    if (checkbox.checked) limpiarError(checkbox);
-});
+// Listener del checkbox desactivado temporalmente (pendiente aviso legal definitivo)
+// checkbox.addEventListener("change", () => {
+//     if (checkbox.checked) limpiarError(checkbox);
+// });
 
 } // fin if (formulario)
 
